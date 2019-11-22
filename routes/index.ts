@@ -1,11 +1,11 @@
-import { request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
+import express from 'express';
 
-var express = require('express');
-var router = express.Router();
+const router = express.Router();
 
 /* GET home page. */
-router.get('/', function(_req: Request, res: Response, _next: NextFunction) {
-  res.render('index', { title: 'Express' });
+router.get('/', function(_req: Request, res: Response, next: NextFunction) {
+    res.render('index', { title: 'Express' });
 });
 
-module.exports = router;
+export default router;
