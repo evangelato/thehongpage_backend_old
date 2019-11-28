@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "if [[ $NODE_ENV == 'production' ]]; then npm run build && node ./bin/www; else npm run build && nodemon ./bin/www; fi",
-    "build": "rm -rf ./build/ && tsc"
+    "start": "npm run build && node ./build/bin/www",
+    "dev": "./node_modules/nodemon/bin/nodemon.js",
+    "build": "rm -rf ./build/ && tsc && cp -r ./src/bin ./build/bin"
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.2",
@@ -28,6 +29,7 @@
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "nodemon": "^2.0.1",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.3"
   }
 }
