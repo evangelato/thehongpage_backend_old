@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "if [[ $NODE_ENV == 'production' ]]; then npm run build && node ./bin/www; else npm run build && nodemon ./bin/www; fi",
     "build": "rm -rf ./build/ && tsc"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "nodemon": "^2.0.1",
     "prettier": "^1.19.1"
   }
 }
