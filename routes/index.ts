@@ -1,11 +1,9 @@
-import { Request, Response, NextFunction } from 'express';
 import express from 'express';
+import indexRender from '../controllers/index';
 
 const router = express.Router();
 
 /* GET home page. */
-router.get('/', function(_req: Request, res: Response, next: NextFunction) {
-    res.render('index', { title: 'Express' });
-});
+router.get('/', indexRender);
 
 export default router;

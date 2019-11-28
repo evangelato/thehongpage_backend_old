@@ -1,11 +1,9 @@
-import { Request, Response, NextFunction } from 'express';
 import express from 'express';
+import usersRender from '../controllers';
 
 const router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(_req: Request, res: Response, next: NextFunction) {
-    res.send('respond with a resource');
-});
+router.get('/', usersRender);
 
 export default router;
