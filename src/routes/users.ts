@@ -1,5 +1,5 @@
 import express from 'express';
-import usersRender from '../controllers';
+import usersRender from '../controllers/users';
 
 const router = express.Router();
 
